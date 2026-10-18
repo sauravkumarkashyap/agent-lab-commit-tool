@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "git-summary"
+version = "0.1.0"
+description = "A lightweight Python CLI tool that parses git diffs and drafts conventional commit messages."
+requires-python = ">=3.11"
+dependencies = []
+
+[project.scripts]
+git-summary = "git_summary.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
+testpaths = ["tests"]
+
+[tool.black]
+line-length = 79
